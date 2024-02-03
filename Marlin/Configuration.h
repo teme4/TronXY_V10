@@ -60,7 +60,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(WolfSon)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -121,7 +121,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
@@ -1193,11 +1193,11 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true
 #define Y_MIN_ENDSTOP_INVERTING true
-#define Z_MIN_ENDSTOP_INVERTING true
+#define Z_MIN_ENDSTOP_INVERTING false
 #define X_MAX_ENDSTOP_INVERTING true
 #define Y_MAX_ENDSTOP_INVERTING true
 #define Z_MAX_ENDSTOP_INVERTING true
-#define Z_MIN_PROBE_ENDSTOP_INVERTING true
+#define Z_MIN_PROBE_ENDSTOP_INVERTING false
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1906,7 +1906,7 @@
 || TRONXY_PROJ == PROJ_XY2_PRO_3E
 #define INVERT_X_DIR false
 #else
-#define INVERT_X_DIR true
+#define INVERT_X_DIR false
 #endif
 #if TRONXY_PROJ == PROJ_XY2_PRO \
 || TRONXY_PROJ == PROJ_XY2_PRO_2E \
@@ -1921,7 +1921,7 @@
 || TRONXY_PROJ == PROJ_VEHO800_2E
 #define INVERT_Y_DIR false
 #else
-#define INVERT_Y_DIR true
+#define INVERT_Y_DIR false
 #endif
 #if TRONXY_PROJ == PROJ_X5SA \
 || TRONXY_PROJ == PROJ_D01_PLUS \
@@ -1937,7 +1937,7 @@
 || TRONXY_PROJ == PROJ_X5SA_PRO_3E \
 || TRONXY_PROJ == PROJ_X5SA_g \
 || TRONXY_PROJ == PROJ_X5SA_MINI
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 #else
 #define INVERT_Z_DIR true
 #endif
@@ -1951,7 +1951,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-// #define INVERT_E0_DIR false
+ #define INVERT_E0_DIR false
 // #define INVERT_E1_DIR false
 // #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -2156,7 +2156,7 @@
  */
 
 // Min software endstops constrain movement within minimum coordinate bounds
-#define MIN_SOFTWARE_ENDSTOPS
+//#define MIN_SOFTWARE_ENDSTOPS
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
   #define MIN_SOFTWARE_ENDSTOP_Y
@@ -2202,7 +2202,7 @@
  */
 #define FIL_RUNOUT_STATE     HIGH
 #if FILAMENT_RUNOUT_CHECK
-  #define FILAMENT_RUNOUT_SENSOR
+  //#define FILAMENT_RUNOUT_SENSOR
 #endif
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
