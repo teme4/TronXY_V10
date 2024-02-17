@@ -728,9 +728,13 @@
     #define DEFAULT_Ki_LIST {   1.65,   1.65 } //1.08
     #define DEFAULT_Kd_LIST { 108.83, 108.83 } //114.00
   #else
-    #define DEFAULT_Kp  22.54
+    /*#define DEFAULT_Kp  22.54
     #define DEFAULT_Ki   1.65
-    #define DEFAULT_Kd  108.83
+    #define DEFAULT_Kd  108.83*/
+    #define DEFAULT_Kp 17.60
+#define DEFAULT_Ki 1.15
+#define DEFAULT_Kd 67.57
+
   #endif
 #endif
 
@@ -1483,7 +1487,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-// #define FIX_MOUNTED_PROBE
+ #define FIX_MOUNTED_PROBE
 
 /**
  * Use the nozzle as the probe, as with a conductive
@@ -1820,7 +1824,7 @@
 #define Z_PROBE_OFFSET_RANGE_MAX 20
 
 // Enable the M48 repeatability test to test probe accuracy
-//#define Z_MIN_PROBE_REPEATABILITY_TEST
+#define Z_MIN_PROBE_REPEATABILITY_TEST
 
 // Before deploy/stow pause for user confirmation
 //#define PAUSE_BEFORE_DEPLOY_STOW
@@ -1951,7 +1955,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
- #define INVERT_E0_DIR false
+ #define INVERT_E0_DIR true
 // #define INVERT_E1_DIR false
 // #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -2310,9 +2314,9 @@
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
 #if ENABLED(FIX_MOUNTED_PROBE)
-#define AUTO_BED_LEVELING_BILINEAR
+//#define AUTO_BED_LEVELING_BILINEAR
 #endif
-// #define AUTO_BED_LEVELING_UBL
+ #define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
 /**
@@ -2539,7 +2543,7 @@
  */
 #if TRONXY_PROJ != PROJ_XY3_PRO \
 && TRONXY_PROJ != PROJ_C2
-#define Z_SAFE_HOMING
+//#define Z_SAFE_HOMING
 #endif
 
 #if ENABLED(Z_SAFE_HOMING)
@@ -3010,11 +3014,12 @@
 //
 // Add individual axis homing items (Home X, Home Y, and Home Z) to the LCD menu.
 //
-//#define INDIVIDUAL_AXIS_HOMING_MENU
-//#define INDIVIDUAL_AXIS_HOMING_SUBMENU
+#define INDIVIDUAL_AXIS_HOMING_MENU
+#define INDIVIDUAL_AXIS_HOMING_SUBMENU
 
 //
 // SPEAKER/BUZZER
+
 //
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
