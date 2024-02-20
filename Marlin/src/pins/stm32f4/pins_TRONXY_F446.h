@@ -322,4 +322,4 @@
 #define HAS_OTG_USB_HOST_SUPPORT
 #endif
 
-#define SPEAKER //蜂鸣器无源
+//#define SPEAKER //蜂鸣器无源
